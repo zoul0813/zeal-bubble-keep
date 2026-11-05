@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="3">
+  <properties>
+    <property name="index" value="9" type="int" />
+    <property name="name" value="Round 10" />
+  </properties>
+  <tileset firstgid="1" source="../tileset.tsx" />
+  <layer id="1" name="Tiles" width="20" height="15">
+    <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+5,5,5,5,5,5,5,5,1,1,1,1,5,5,5,5,5,5,5,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,21,21,21,21,1,1,1,1,1,1,21,21,21,21,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,21,21,21,21,21,21,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,21,21,21,21,1,1,1,1,1,1,1,1,21,21,21,21,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,5,5,5,5,5,5,5,1,1,1,1,5,5,5,5,5,5,5,5
+</data>
+  </layer>
+  <objectgroup id="2" name="Spawns">
+    <object id="1" name="Player" class="Player" x="32" y="208">
+      <point />
+    </object>
+    <object id="2" name="Boss" class="Boss" x="208" y="208">
+      <point />
+    </object>
+  </objectgroup>
+</map>

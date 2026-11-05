@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="9">
+  <properties>
+    <property name="index" value="10" type="int" />
+    <property name="name" value="Round 11" />
+  </properties>
+  <tileset firstgid="1" source="../tileset.tsx" />
+  <layer id="1" name="Tiles" width="20" height="15">
+    <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+6,6,6,6,6,6,6,6,1,1,1,1,6,6,6,6,6,6,6,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,1,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,1,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,1,22,22,22,22,22,1,1,1,1,1,1,22,22,22,22,22,1,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,1,1,1,1,1,22,22,22,22,22,22,22,22,1,1,1,1,1,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,1,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,1,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,
+6,6,6,6,6,6,6,6,1,1,1,1,6,6,6,6,6,6,6,6
+</data>
+  </layer>
+  <objectgroup id="2" name="Spawns">
+    <object id="1" name="Slime" class="Slime" x="48" y="48">
+      <point />
+    </object>
+    <object id="2" name="Bat" class="Bat" x="96" y="48">
+      <point />
+    </object>
+    <object id="3" name="Bat" class="Bat" x="176" y="48">
+      <point />
+    </object>
+    <object id="4" name="Slime" class="Slime" x="256" y="48">
+      <point />
+    </object>
+    <object id="5" name="Slime" class="Slime" x="64" y="96">
+      <point />
+    </object>
+    <object id="6" name="Slime" class="Slime" x="240" y="96">
+      <point />
+    </object>
+    <object id="7" name="Slime" class="Slime" x="160" y="128">
+      <point />
+    </object>
+    <object id="8" name="Player" class="Player" x="32" y="208">
+      <point />
+    </object>
+  </objectgroup>
+</map>
