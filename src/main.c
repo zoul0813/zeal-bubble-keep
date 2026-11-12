@@ -84,7 +84,7 @@ static void read_input(void) {
     input_now = input_read();
     if (autopilot_on) {
         if (game.demo && input_now) demo_quit = 1;
-        input_now = (input_now & IN_START) | autopilot_input();
+        input_now = (input_now & (IN_START | IN_QUIT)) | autopilot_input();
     }
     input_pressed = input_now & ~input_last;
     input_last = input_now;
@@ -240,17 +240,23 @@ static void round_start(void) {
     game.hud_dirty = 1;
 }
 
-static void pause(void) {
+/* Returns 1 to abandon the run and return to the title. */
+static uint8_t pause(void) {
+    uint8_t quit = 0;
     text_center("PAUSED", 7);
+    text_center(CONTROL_PROMPT("ENTER: RESUME", PAD_START ": RESUME"), 9);
+    text_center(CONTROL_PROMPT("SHIFT: TITLE", PAD_SELECT ": TITLE"), 11);
     bgm_pause();
     input_flush();
     input_last = 0;
     do {
         read_input();
+        if (input_pressed & IN_QUIT) { quit = 1; break; }
         frame_end();
     } while (!(input_pressed & IN_START));
-    level_redraw_rows(7, 1);
+    level_redraw_rows(7, 5);
     bgm_resume();
+    return quit;
 }
 
 /* Round cleared: time bonus, plus 500 when no life was lost in the round (scores are 16-bit: keep bonuses modest) */
@@ -276,6 +282,7 @@ static void play(uint8_t demo) {
     uint8_t over_timer = 0;
     uint16_t flood_timer = 0;
     uint16_t demo_timer = 0;
+    uint8_t quit = 0;
 
     game.score = 0;
     game.lives = LIVES_START;
@@ -302,7 +309,11 @@ static void play(uint8_t demo) {
     while (1) {
     
         read_input();
-        if ((input_pressed & IN_START) && !game.demo) pause();
+        if (!game.demo && ((input_pressed & IN_QUIT) ||
+            ((input_pressed & IN_START) && pause()))) {
+            quit = 1;
+            break;
+        }
 #ifdef CHEATS
         if (input_pressed & BUTTON_L) actors_cheat_clear();
 #endif
@@ -375,7 +386,7 @@ static void play(uint8_t demo) {
         return;
     }
     input_flush();
-    hiscore_add(game.score);
+    if (!quit) hiscore_add(game.score);
 }
 
 int main(void) {

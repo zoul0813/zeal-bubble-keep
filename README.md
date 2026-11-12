@@ -17,9 +17,12 @@ in the menu. The selected keyboard/pad display stays fixed during the game.
 | Jump (hold for height) | Z or Space | B |
 | Blow bubble | X or A | A or Y |
 | Start / pause | Enter | Start |
-| Quit (title screen) | Right Shift | Select |
+| Return to title (playing or paused) | Right Shift | Select |
+| Exit to OS (title screen) | Right Shift | Select |
 
 Hold jump while falling onto a bubble to bounce off it instead of popping it.
+Paused games show the resume and return-to-title controls. Returning to the title
+abandons the current run without submitting its score.
 
 ## How to play
 
